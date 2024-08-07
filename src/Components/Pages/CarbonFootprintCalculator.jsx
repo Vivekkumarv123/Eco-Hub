@@ -35,12 +35,24 @@ const CarbonFootprintCalculator = () => {
   };
 
   const generateMessage = (totalEmissions) => {
-    if (totalEmissions < 5) {
-      setMessage('Your carbon footprint is very low! Consider continuing your eco-friendly habits and exploring new ways to reduce your footprint further.');
-    } else if (totalEmissions < 9) {
-      setMessage('Your carbon footprint is moderate. You can improve by reducing car usage, increasing energy efficiency at home, and adopting a more plant-based diet.');
-    } else {
-      setMessage('Great job! Your carbon footprint is quite low. Keep up the excellent work and continue to inspire others to live sustainably!');
+    const footprintRanges = {
+      veryLow: { max: 5000 }, // Assuming 5 tons is very low annually
+      low: { max: 15000 }, // Assuming 15 tons is low annually
+      moderate: { max: 30000 }, // Assuming 30 tons is moderate annually
+      high: { max: Infinity },
+    };
+
+    for (const range in footprintRanges) {
+      if (totalEmissions <= footprintRanges[range].max) {
+        const messageText = {
+          veryLow: 'Your carbon footprint is very low! Keep up the excellent work and inspire others to live sustainably!',
+          low: 'Your carbon footprint is low. Consider exploring new ways to reduce it further, like using public transport or switching to renewable energy.',
+          moderate: 'Your carbon footprint is moderate. You can improve by reducing car usage, increasing energy efficiency at home, and adopting a more plant-based diet.',
+          high: 'Your carbon footprint is high. Consider making significant changes like reducing car usage, switching to renewable energy, and adopting a plant-based diet.',
+        };
+        setMessage(messageText[range]);
+        return;
+      }
     }
   };
 
@@ -48,7 +60,7 @@ const CarbonFootprintCalculator = () => {
     <div className="calculator-container">
       <h2>Carbon Footprint Calculator</h2>
       <div>
-        <label htmlFor=" miles">Weekly miles driven: </label>
+        <label htmlFor="miles">Weekly miles driven: </label>
         <input type="number" id="miles" value={transportMiles} onChange={(e) => setTransportMiles(e.target.value)} />
       </div>
       <div>
