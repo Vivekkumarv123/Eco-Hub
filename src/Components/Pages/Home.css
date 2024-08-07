@@ -28,7 +28,7 @@
 
   }
   .quote-container {
-    position: right;
+    position: absolute;
     top: 30%;
     left: 60%;
     color: #ffffff;
