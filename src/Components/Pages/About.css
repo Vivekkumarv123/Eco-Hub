@@ -1,0 +1,53 @@
+/* About.css */
+.navbar-container {
+    width: 100%;
+    background-color: #333;
+    padding: 5px;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/026/502/279/large_2x/beautiful-morning-on-the-jungle-taken-from-top-view-realisticgraphy-ultra-detailed-8k-natural-lighting-ai-generative-photo.jpg') no-repeat center center/cover;/* Add your image path here */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .quote-container {
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .quote-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .quote-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .projects {
+    background-color: #4CAF50; /* Green background for the button */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .projects:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
