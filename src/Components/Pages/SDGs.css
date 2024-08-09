@@ -1,0 +1,29 @@
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-text {
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li::before {
+    content: "✓";
+    margin-right: 8px;
+    color: #28a745;
+}
+
+.text-center {
+    font-size: 2em;
+    color: #17a2b8;
+}
